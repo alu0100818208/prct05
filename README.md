@@ -2,7 +2,7 @@
 ##Pruebas Unitarias
 La siguiente práctica consiste en la realización de una clase para representar números fraccionarios. Los métodos implementados son los siguientes:
 * imprimir:
-	Muestra por pantalla el número.
+	Devuelve la fracción como cadena.
 * simplificar:
 	Convierte la fracción a su expresión mas simple.
 * mcd:

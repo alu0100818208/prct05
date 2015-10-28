@@ -42,9 +42,17 @@ class Fraccionarios
         else
             n = n*(mcm(d,@denominador)/d) + @numerador*(mcm(d,@denominador)/@denominador)
             d = mcm(d,@denominador)
-            simplificar(n, d)
         end
         
+        n,d = simplificar(n, d)
+        
+        return n,d
+    end
+    
+    def multiplicar(n,d)
+        n = n*@numerador
+        d = d*@denominador
+        n,d = simplificar(n,d)
         return n,d
     end
         
