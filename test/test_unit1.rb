@@ -20,6 +20,8 @@ class TestPoint < Test::Unit::TestCase
     def test_restar
         assert_equal([7,24], Fraccionarios.new(4,6).restar(3,8))
     end
+    
+    def test_dividir
+        assert_equal([16,9], Fraccionarios.new(4,6).dividir(3,8))
+    end
 end
-
-Fraccionarios.new(5,8).imprimir

@@ -33,6 +33,7 @@ class Fraccionarios
         aux1 , aux2 = x , y
         x = x/(mcd(aux1,aux2))
         y = y/(mcd(aux1,aux2))
+        
         return x,y
     end
     
@@ -63,6 +64,15 @@ class Fraccionarios
             n = -(n*(mcm(d,@denominador)/d)) + @numerador*(mcm(d,@denominador)/@denominador)
             d = mcm(d,@denominador)
         end
+        n,d = simplificar(n,d)
+        return n,d
+    end
+    
+    def dividir(n,d)
+        aux1 , aux2 = n, d
+        n = @numerador*aux2
+        d = @denominador*aux1
+        n,d = simplificar(n,d)
         return n,d
     end
         
