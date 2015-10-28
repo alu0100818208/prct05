@@ -16,6 +16,10 @@ class TestPoint < Test::Unit::TestCase
     def test_multiplicar
         assert_equal([1,4], Fraccionarios.new(4,6).multiplicar(3,8))
     end
+    
+    def test_restar
+        assert_equal([7,24], Fraccionarios.new(4,6).restar(3,8))
+    end
 end
 
 Fraccionarios.new(5,8).imprimir

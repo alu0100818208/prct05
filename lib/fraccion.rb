@@ -55,5 +55,15 @@ class Fraccionarios
         n,d = simplificar(n,d)
         return n,d
     end
+    
+    def restar(n,d)
+        if d == @denominador
+            n = @numerador - n
+        else
+            n = -(n*(mcm(d,@denominador)/d)) + @numerador*(mcm(d,@denominador)/@denominador)
+            d = mcm(d,@denominador)
+        end
+        return n,d
+    end
         
 end
