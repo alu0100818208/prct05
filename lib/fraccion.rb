@@ -75,5 +75,31 @@ class Fraccionarios
         n,d = simplificar(n,d)
         return n,d
     end
+    
+    def *(value)
+        Fraccionarios.new(@numerador * value,@denominador)
+    end
+    
+    def +(other)
+        Fraccionarios.new(@numerador,@denominador).sumar(other.numerador,other.denominador) 
+    end
+    
+    def *(other)
+        Fraccionarios.new(@numerador ,@denominador).multiplicar(other.numerador,other.denominador)
+    end
+    
+    def -(other)
+        Fraccionarios.new(@numerador ,@denominador).restar(other.numerador,other.denominador) 
+    end
+    
+    #def /(other)
+    #    Fraccionarios.new(@nnumerador ,@denominador).dividir(other.numerador,other.denominador) 
+    #end
+    
+    def -@
+        Fraccionarios.new(@numerador * -1,@denominador)
+    end
+    
+    
         
 end
