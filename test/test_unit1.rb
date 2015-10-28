@@ -8,6 +8,10 @@ class TestPoint < Test::Unit::TestCase
         assert_equal(72, Fraccionarios.new(24,36).mcm(24,36))
         assert_equal("(2/3)", Fraccionarios.new(24,36).imprimir)         #nos aseguramos que simplifica
     end
+    
+    def test_suma
+        assert_equal([25,24], Fraccionarios.new(4,6).sumar(3,8))
+    end
 end
 
 Fraccionarios.new(5,8).imprimir

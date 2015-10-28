@@ -6,7 +6,7 @@ class Fraccionarios
         @numerador=n
         @denominador=d
         
-        simplificar
+        @numerador, @denominador = simplificar(@numerador, @denominador)
     end
 
     #imprimir número
@@ -23,15 +23,29 @@ class Fraccionarios
         return x
     end
     
+    #Mínimo común múltiplo
     def mcm(x,y)
         x, y = x.abs, y.abs
         return (x/mcd(x,y) * y)
     end
     
-    def simplificar
-        x , y = @numerador, @denominador
-        @numerador = @numerador/(mcd(x,y))
-        @denominador = @denominador/(mcd(x,y))
+    def simplificar(x, y)
+        aux1 , aux2 = x , y
+        x = x/(mcd(aux1,aux2))
+        y = y/(mcd(aux1,aux2))
+        return x,y
+    end
+    
+    def sumar(n,d)
+        if d == @denominador
+            n += @numerador
+        else
+            n = n*(mcm(d,@denominador)/d) + @numerador*(mcm(d,@denominador)/@denominador)
+            d = mcm(d,@denominador)
+            simplificar(n, d)
+        end
+        
+        return n,d
     end
         
 end
